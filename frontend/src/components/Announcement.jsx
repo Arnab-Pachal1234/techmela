@@ -37,12 +37,12 @@ const Announcement = () => {
   }
  
  const askmessage=async(id)=>{
-    if(authUser.fullName !='#CCARND'){return;}
+    if(!authUser.isHost){return;}
    const res =  await visibleButton({id});
   }
   const deleteNow =async(msg,id,senderId)=>{
     if(msg=="del"){
-      if(authUser.fullName !='#CCARND'){alert("You cant't delete");return;}
+      if(!authUser.isHost){alert("You cant't delete");return;}
        await deleteAnnounce({id});
     }
     else{console.log("Don't Delete")

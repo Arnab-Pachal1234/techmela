@@ -58,7 +58,9 @@ const SideBar = () => {  // Destructure `id` and `isHost`
             />
             <span className="text-sm">Show online only</span>
           </label>
-          <span className="text-xs text-zinc-500">({availableUsers.length - 1} online)</span>
+          {showOnlineOnly ?( <span className="text-xs text-zinc-500">({filteredUsers.length} online)</span>):
+          ( <span className="text-xs text-zinc-500">({filteredUsers.length} total)</span>)}
+            
         </div>
       </div>
 
